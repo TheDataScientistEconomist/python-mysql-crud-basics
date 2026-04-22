@@ -1,12 +1,9 @@
+# import required dependencies
 import mysql.connector as connector
-from datetime import datetime
-import uuid
-import sys
 import yaml
 
+# safely connect to database. Note that we're safely loading the connection details through yaml
 db = yaml.safe_load(open('db.yaml'))
-sys.dont_write_bytecode = True
-
 cnx = connector.connect(**
     {
     'user':     db['user'],
